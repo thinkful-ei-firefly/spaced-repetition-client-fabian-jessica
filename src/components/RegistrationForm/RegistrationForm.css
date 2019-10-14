@@ -1,0 +1,42 @@
+.form-login-register {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.button-form-submit {
+    background-color: #4baea0;
+    color: black;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 1px 1px 1px black;
+}
+
+.form-label-input {
+    margin: 5px;
+    font-size: 18px;
+}
+
+.form-input {
+    margin: 5px;
+    font-size: 18px;
+    background-color: #f1f0cf;
+    border-radius: 3px;
+}
+
+.login-register-header {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.login-register-section {
+    padding: 10px;
+    background-color: #b6e6bd;
+}
