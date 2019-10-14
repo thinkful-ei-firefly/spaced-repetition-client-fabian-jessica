@@ -33,7 +33,7 @@ class Header extends Component {
     return (
       <nav>
         <Link to='/login' className="login-logout-header">Login</Link>
-        {' '}
+        {'    '}
         <Link to='/register' className="login-logout-header">Sign up</Link>
       </nav>
     )
