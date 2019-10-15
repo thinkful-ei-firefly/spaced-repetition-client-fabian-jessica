@@ -2,7 +2,7 @@ import config from '../config'
 import TokenService from './token-service'
 
 const DashboardApiService = {
-  getLanguaje() {
+  getLanguage() {
     return fetch(`${config.API_ENDPOINT}/language`, {
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
