@@ -1,0 +1,65 @@
+.word-question-screen {
+    text-align: center;
+}
+
+.word-question-flashcard {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 5px;
+}
+
+.guess-word {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.guess-label {
+    display: block;
+    margin: 5px;
+}
+
+.guess {
+    font-size: 24px;
+    margin: 5px;
+}
+
+.guess-submit {
+    display: block;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 1px 1px 1px black;
+    background-color: darkslategray;
+}
+
+.difficulty-easy {
+    background-color: rgb(126, 187, 154);
+}
+
+.difficulty-normal {
+    background-color: wheat;
+}
+
+.difficulty-hard {
+    background-color: rgb(238, 136, 136);
+}
