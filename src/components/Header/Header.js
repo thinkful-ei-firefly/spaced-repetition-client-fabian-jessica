@@ -44,7 +44,7 @@ class Header extends Component {
       <header>
         <h1 className="site-title-header">
           <Link to='/' className="site-title-header">
-            Lingua Franca
+            Lingua Franca <br/> Learn vocabulary with Spaced repetition
           </Link>
         </h1>
         {TokenService.hasAuthToken()

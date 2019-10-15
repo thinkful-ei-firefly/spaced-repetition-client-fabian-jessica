@@ -1,0 +1,84 @@
+.dashboard-screen {
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+.dashboard-language-header {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.dashboard-learning-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 1px 1px 1px black;
+    background-color: seagreen;
+}
+
+.dashboard-vocab-header {
+    text-align: center;
+    font-size: 30px;
+}
+
+.dashboard-vocab-list {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.dashboard-vocab-word {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 5px;
+}
+
+.vocab-word-score {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.vocab-word-translation {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.dashboard-vocab-word h4 {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
+.dashboard-answer-display {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.difficulty-easy {
+    background-color: rgb(126, 187, 154);
+}
+
+.difficulty-normal {
+    background-color: wheat;
+}
+
+.difficulty-hard {
+    background-color: rgb(238, 136, 136);
+}
