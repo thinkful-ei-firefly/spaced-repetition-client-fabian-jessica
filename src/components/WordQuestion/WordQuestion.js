@@ -28,7 +28,7 @@ class WordQuestion extends React.Component {
         </form>
         <p>You have answered this word correctly {(numCorrect)} times.</p>
         <p>You have answered this word incorrectly {(numIncorrect)} times.</p>
-        <p>Your total score is: {numCorrect}</p>
+        <p className="DisplayScore">Your total score is: {numCorrect}</p>
       </div>
       </div>
     );
