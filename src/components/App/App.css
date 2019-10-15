@@ -5,3 +5,9 @@ span, p, label {
 a, h1, h2 {
     font-family: 'Playfair Display', serif;
 }
+
+.error-message{
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}

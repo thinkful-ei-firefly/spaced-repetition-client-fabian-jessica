@@ -1,28 +1,43 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import DashboardApiService  from '../../services/dashboard-api-service'
+
 import './Dashboard.css'
 
 class Dashboard extends Component {
-  state = { 
+
+  state = {
     hasError: false,
     language_name: 'Loading...',
     total_score: 'Loading...',
-    words: []
+    words: [],
+    error: null
   }
 
   getLanguageData = async () => {
     //fetch language data from the API and update state
-    const data = await DashboardApiService.getLanguage()
-    const language_name = data.language.name;
-    const total_score = data.language.total_score;
-    const words = data.words;
+    try{
+      const data = await DashboardApiService.getLanguage()
+      const language_name = data.language.name;
+      const total_score = data.language.total_score;
+      const words = data.words;
 
-    this.setState({
-      language_name,
-      total_score,
-      words
-    })
+      this.setState({
+        language_name,
+        total_score,
+        words,
+        error: null
+      })
+    }catch(e){
+      console.log('error', e.error);
+      if (e.error && e.error==='Unauthorized request'){
+        this.props.history.push(`/login`)
+      }else if (e.error){
+        this.setState({ error: e.error })
+      }else{
+        this.setState({ error: 'You got error!' })
+      }
+    }
   }
 
   componentDidMount () {
@@ -32,7 +47,7 @@ class Dashboard extends Component {
 
 
   render () {
-
+    const { error } = this.state
     const wordList = this.state.words.map(word => {
       let difficulty = 'normal'
       const correctRate = (word.correct_count + 1) / (word.incorrect_count + 1)
@@ -49,6 +64,9 @@ class Dashboard extends Component {
 
     return (
       <div className="dashboard-screen">
+        <div role='alert'>
+          {error && <p className='error-message'>{error}</p>}
+        </div>
         <h2 className="dashboard-language-header">Your languages: {this.state.language_name}</h2>
         <Link to='/learn' className="dashboard-learning-button">Start practicing</Link>
 
@@ -63,4 +81,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard
+export default withRouter(Dashboard)
