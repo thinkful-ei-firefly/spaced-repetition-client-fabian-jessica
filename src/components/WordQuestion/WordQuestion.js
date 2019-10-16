@@ -1,27 +1,30 @@
 import React from 'react'
 import './WordQuestion.css'
-import DashboardApiService  from '../../services/dashboard-api-service'
+import LanguageApiService  from '../../services/language-api-service'
+import WordFeedback from '../WordFeedback/WordFeedback'
 
 class WordQuestion extends React.Component {
   state = {
-    word: {}
+    word: {},
+    answered: false,
+    feedback: {}
   }
 
-  handleFormSubmit = (ev) => {
-    ev.preventDefault();
-    console.log('checking your answer....')
-  }
-
-  getHeadWord = async () => {
+  handleFormSubmit = async (ev) => {
     try{
-      const word = await DashboardApiService.getHead()
-
+      ev.preventDefault();
+      const guess = ev.target['learn-guess-input']
+      const res = await LanguageApiService.setGuess(guess.value)
       this.setState({
-        word,
-        error: null
+        answered: true,
+        word: res,
+        feedback: {
+          ...res,
+          current_word: this.state.word.nextWord,
+          input_word: guess.value,
+        }
       })
     }catch(e){
-      console.log('error', e.error);
       if (e.error && e.error==='Unauthorized request'){
         this.props.history.push(`/login`)
       }else if (e.error){
@@ -30,6 +33,31 @@ class WordQuestion extends React.Component {
         this.setState({ error: 'You got error!' })
       }
     }
+  }
+
+  getHeadWord = async () => {
+    try{
+      const word = await LanguageApiService.getHead()
+
+      this.setState({
+        word,
+        error: null
+      })
+    }catch(e){
+      if (e.error && e.error==='Unauthorized request'){
+        this.props.history.push(`/login`)
+      }else if (e.error){
+        this.setState({ error: e.error })
+      }else{
+        this.setState({ error: 'You got error!' })
+      }
+    }
+  }
+
+  nextQuestion = () => {
+      this.setState({
+        answered: false
+      })
   }
 
   componentDidMount(){
@@ -43,21 +71,28 @@ class WordQuestion extends React.Component {
     if (correctRatio > 2) difficulty = 'easy'
     if (correctRatio < 0.5) difficulty = 'hard'
 
-    return (
-      <div className="word-question-screen">
-      <div className={`word-question-flashcard difficulty-${difficulty}`}>
-        <h2>Translate the word:</h2>
-        <span className="guess-word">{nextWord}</span>
-        <form onSubmit={ev => this.handleFormSubmit(ev)}>
-          <label htmlFor="learn-guess-input" className="guess-label">What's the translation for this word?</label>
-          <input type="text" id="learn-guess-input" className="guess" required></input>
-          <button type="submit" className="guess-submit">Submit your answer</button>
-        </form>
-        <p className="DisplayScore">Your total score is: {totalScore}</p>
-        <p>You have answered this word correctly {(wordCorrectCount)} times.</p>
-        <p>You have answered this word incorrectly {(wordIncorrectCount)} times.</p>
+    return (<div>
+      {!this.state.answered ?
+        <div className="word-question-screen">
+          <div className={`word-question-flashcard difficulty-${difficulty}`}>
+            <h2>Translate the word:</h2>
+            <span className="guess-word">{nextWord}</span>
+            <form onSubmit={ev => this.handleFormSubmit(ev)}>
+              <label htmlFor="learn-guess-input" className="guess-label">What's the translation for this word?</label>
+              <input type="text" id="learn-guess-input" className="guess" required></input>
+              <button type="submit" className="guess-submit">Submit your answer</button>
+            </form>
+            <p className="DisplayScore">Your total score is: {totalScore}</p>
+            <p>You have answered this word correctly {(wordCorrectCount)} times.</p>
+            <p>You have answered this word incorrectly {(wordIncorrectCount)} times.</p>
 
-      </div>
+          </div>
+        </div>
+
+        :
+
+        <WordFeedback feedback={this.state.feedback} nextQuestion={this.nextQuestion} />
+      }
       </div>
     );
   }

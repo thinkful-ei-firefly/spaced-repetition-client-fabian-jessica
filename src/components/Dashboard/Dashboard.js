@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import DashboardApiService  from '../../services/dashboard-api-service'
+import LanguageApiService  from '../../services/language-api-service'
 
 import './Dashboard.css'
 
@@ -17,7 +17,7 @@ class Dashboard extends Component {
   getLanguageData = async () => {
     //fetch language data from the API and update state
     try{
-      const data = await DashboardApiService.getLanguage()
+      const data = await LanguageApiService.getLanguage()
       const language_name = data.language.name;
       const total_score = data.language.total_score;
       const words = data.words;
