@@ -7,7 +7,8 @@ class WordQuestion extends React.Component {
   state = {
     word: {},
     answered: false,
-    feedback: {}
+    feedback: {},
+    error: null
   }
 
   handleFormSubmit = async (ev) => {
@@ -30,7 +31,7 @@ class WordQuestion extends React.Component {
       }else if (e.error){
         this.setState({ error: e.error })
       }else{
-        this.setState({ error: 'You got error!' })
+        this.setState({ error: 'You got error connection!' })
       }
     }
   }
@@ -49,7 +50,7 @@ class WordQuestion extends React.Component {
       }else if (e.error){
         this.setState({ error: e.error })
       }else{
-        this.setState({ error: 'You got error!' })
+        this.setState({ error: 'You got error connection!' })
       }
     }
   }
@@ -65,6 +66,7 @@ class WordQuestion extends React.Component {
   }
 
   render() {
+    const { error } = this.state
     const { nextWord, totalScore, wordCorrectCount, wordIncorrectCount } = this.state.word;
     let difficulty = 'normal'
     const correctRatio = (wordCorrectCount + 1) / (wordIncorrectCount + 1)
@@ -72,6 +74,9 @@ class WordQuestion extends React.Component {
     if (correctRatio < 0.5) difficulty = 'hard'
 
     return (<div>
+        <div role='alert'>
+          {error && <p className='error-message'>{error}</p>}
+        </div>
       {!this.state.answered ?
         <div className="word-question-screen">
           <div className={`word-question-flashcard difficulty-${difficulty}`}>

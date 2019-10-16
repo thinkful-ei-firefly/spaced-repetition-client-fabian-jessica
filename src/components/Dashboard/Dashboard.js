@@ -35,7 +35,7 @@ class Dashboard extends Component {
       }else if (e.error){
         this.setState({ error: e.error })
       }else{
-        this.setState({ error: 'You got error!' })
+        this.setState({ error: 'You got error connection!' })
       }
     }
   }
