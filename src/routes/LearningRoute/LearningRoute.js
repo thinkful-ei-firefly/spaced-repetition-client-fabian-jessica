@@ -5,7 +5,7 @@ import WordQuestion from '../../components/WordQuestion/WordQuestion'
 class LearningRoute extends Component {
   render() {
     return (
-      <section>
+      <section aria-live="polite">
         <WordQuestion />
       </section>
     );
