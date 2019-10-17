@@ -96,7 +96,7 @@ class WordQuestion extends React.Component {
 
         :
 
-        <WordFeedback feedback={this.state.feedback} nextQuestion={this.nextQuestion} />
+        <WordFeedback feedback={this.state.feedback} nextQuestion={this.nextQuestion} difficulty={difficulty} />
       }
       </div>
     );

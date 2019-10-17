@@ -3,7 +3,7 @@
     margin: 10px;
     text-decoration: none;
     color: white;
-    background-color: rgb(38, 116, 72);
+    background-color: rgb(80, 118, 223);
     padding: 10px;
     width: 120px;
     display: inline-block;
@@ -23,7 +23,7 @@
 
 header {
     text-align: center;
-    background-color: #4baea0;
+    background-color: darkslategray;
     background-image:
         linear-gradient(
             to bottom,
@@ -31,6 +31,7 @@ header {
             rgba(0, 0, 0, 0.7)
         ),
         url("../../images/back.jpg");
+    background-size: cover;
     padding: 10px;
 }
 

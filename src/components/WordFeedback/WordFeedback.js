@@ -12,7 +12,7 @@ class WordFeedback extends React.Component {
 
     return (
       <div className="word-answer-screen">
-        <div className="word-feedback-card">
+        <div className={`word-feedback-card difficulty-${this.props.difficulty}`}>
           <h2>{feedbackHeader}</h2>
           <div className="DisplayScore">
             <p >Your total score is: {this.props.feedback.totalScore}</p>
