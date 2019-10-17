@@ -5,8 +5,10 @@
 .word-question-flashcard {
     padding-top: 20px;
     padding-bottom: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    max-width: 425px;
     border: 1px solid black;
     display: inline-block;
     margin-top: 20px;
@@ -31,7 +33,13 @@
 
 .guess {
     font-size: 24px;
-    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background-color: #f1f0cf;
+    border-radius: 3px;
+    display: block;
+    width: 80%;
 }
 
 .guess-submit {
@@ -49,7 +57,7 @@
     text-decoration: none;
     color: white;
     box-shadow: 1px 1px 1px black;
-    background-color: rgb(80, 118, 223);
+    background-color: rgb(59, 89, 170);
 }
 
 .difficulty-easy {
@@ -62,4 +70,12 @@
 
 .difficulty-hard {
     background-color: rgb(238, 136, 136);
+}
+
+.learn-guess-input {
+    margin: auto;
+    background-color: #f1f0cf;
+    border-radius: 3px;
+    display: block;
+    width: 80%
 }

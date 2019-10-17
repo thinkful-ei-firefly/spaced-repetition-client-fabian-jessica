@@ -12,6 +12,7 @@
     text-align: center;
     background-color: whitesmoke;
     border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
     border-radius: 5px;
     padding: 20px;
 }
@@ -33,7 +34,8 @@
     text-decoration: none;
     color: white;
     box-shadow: 1px 1px 1px black;
-    background-color: rgb(80, 118, 223);
+    background-color: rgb(59, 89, 170);
+    text-shadow: 2px 2px 2px black;
     font-family: 'Playfair Display', serif;
     box-shadow: 1px 1px 1px black;
 }

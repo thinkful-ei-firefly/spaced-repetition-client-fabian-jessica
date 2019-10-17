@@ -13,5 +13,5 @@ a, h1, h2 {
 }
 
 html {
-  background: linear-gradient(to right, rgb(60, 114, 60) 0%, white 25%, white 75%, rgb(168, 49, 49) 100%);
+  background: linear-gradient(to right, rgb(60, 114, 60) 0%, whitesmoke 25%, whitesmoke 75%, rgb(168, 49, 49) 100%);
 }

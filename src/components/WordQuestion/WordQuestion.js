@@ -70,8 +70,8 @@ class WordQuestion extends React.Component {
     const { nextWord, totalScore, wordCorrectCount, wordIncorrectCount } = this.state.word;
     let difficulty = 'normal'
     const correctRatio = (wordCorrectCount + 1) / (wordIncorrectCount + 1)
-    if (correctRatio > 2) difficulty = 'easy'
-    if (correctRatio < 0.5) difficulty = 'hard'
+    if (correctRatio > 3) difficulty = 'easy'
+    if (correctRatio < 0.6) difficulty = 'hard'
 
     return (<div>
         <div role='alert'>
