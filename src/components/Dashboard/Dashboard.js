@@ -51,8 +51,8 @@ class Dashboard extends Component {
     const wordList = this.state.words.map(word => {
       let difficulty = 'normal'
       const correctRate = (word.correct_count + 1) / (word.incorrect_count + 1)
-      if (correctRate > 2) difficulty = 'easy'
-      if (correctRate < .5) difficulty = 'hard'
+      if (correctRate > 3) difficulty = 'easy'
+      if (correctRate < .6) difficulty = 'hard'
       return (
         <li key={word.id} className={`dashboard-vocab-word difficulty-${difficulty}`}>
           <h4>{word.original}</h4>
