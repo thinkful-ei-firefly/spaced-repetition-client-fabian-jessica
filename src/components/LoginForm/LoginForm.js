@@ -47,10 +47,10 @@ class LoginForm extends Component {
         className='LoginForm form-login-register'
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
+        <div role='alert' className="error-bar">
           {error && <p>{error}</p>}
         </div>
-        <div>
+        <div className="form-entry">
           <Label htmlFor='login-username-input' className="form-label-input">
             Username
           </Label>
@@ -62,7 +62,7 @@ class LoginForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className="form-entry">
           <Label htmlFor='login-password-input' className="form-label-input">
             Password
           </Label>

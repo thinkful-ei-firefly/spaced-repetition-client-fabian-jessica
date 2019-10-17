@@ -11,3 +11,7 @@ a, h1, h2 {
   font-size: 20px;
   text-align: center;
 }
+
+html {
+  background: linear-gradient(to right, rgb(60, 114, 60) 0%, white 25%, white 75%, rgb(168, 49, 49) 100%);
+}

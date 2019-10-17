@@ -19,10 +19,12 @@ class RegistrationRoute extends Component {
         <p className="login-register-header">
           Practice learning a language with the spaced reptition revision technique.
         </p>
-        <h2 className="login-register-header">Sign up</h2>
-        <RegistrationForm
-          onRegistrationSuccess={this.handleRegistrationSuccess}
-        />
+        <div className="login-register-card">
+          <h2 className="login-register-header">Sign up</h2>
+          <RegistrationForm
+            onRegistrationSuccess={this.handleRegistrationSuccess}
+          />
+        </div>
       </section>
     );
   }

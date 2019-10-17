@@ -4,17 +4,36 @@
     text-align: center;
 }
 
-.button-form-submit {
-    background-color: #4baea0;
-    color: black;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 20px;
+.login-register-card {
+    width: 80%;
+    max-width: 500px;
     display: block;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.button-form-submit {
+    display: block;
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right:10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 1px 1px 1px black;
+    background-color: darkslategray;
     font-family: 'Playfair Display', serif;
     box-shadow: 1px 1px 1px black;
 }
@@ -22,13 +41,16 @@
 .form-label-input {
     margin: 5px;
     font-size: 18px;
+    display: block;
 }
 
 .form-input {
-    margin: 5px;
+    margin: auto;
     font-size: 18px;
     background-color: #f1f0cf;
     border-radius: 3px;
+    display: block;
+    width: 80%
 }
 
 .login-register-header {
@@ -37,6 +59,16 @@
 }
 
 .login-register-section {
-    padding: 10px;
-    background-color: #b6e6bd;
+    padding: 10px;    
+}
+
+.form-entry {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.error-bar {
+    color: red;
+    font-size: 24px;
 }
