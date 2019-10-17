@@ -18,6 +18,8 @@ class Header extends Component {
           Welcome, {this.context.user.name}
         </span>
         <nav>
+          <Link to='/' className="login-logout-header">Dashboard</Link>
+          {'    '}
           <Link
             onClick={this.handleLogoutClick}
             className="login-logout-header"
