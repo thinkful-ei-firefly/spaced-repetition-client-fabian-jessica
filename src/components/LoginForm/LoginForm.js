@@ -59,6 +59,7 @@ class LoginForm extends Component {
             className="form-input"
             id='login-username-input'
             name='username'
+            maxlength="20"
             required
           />
         </div>
@@ -71,6 +72,7 @@ class LoginForm extends Component {
             id='login-password-input'
             name='password'
             type='password'
+            maxlength="20"
             required
           />
         </div>

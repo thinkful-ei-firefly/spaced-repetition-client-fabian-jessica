@@ -84,7 +84,7 @@ class WordQuestion extends React.Component {
             <span className="guess-word">{nextWord}</span>
             <form onSubmit={ev => this.handleFormSubmit(ev)}>
               <label htmlFor="learn-guess-input" className="guess-label">What's the translation for this word?</label>
-              <input type="text" id="learn-guess-input" className="guess" required></input>
+              <input type="text" id="learn-guess-input" className="guess" maxlength="20" required></input>
               <button type="submit" className="guess-submit">Submit your answer</button>
             </form>
             <p className="DisplayScore">Your total score is: {totalScore}</p>

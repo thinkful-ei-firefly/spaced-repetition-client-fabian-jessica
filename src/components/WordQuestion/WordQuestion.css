@@ -61,15 +61,15 @@
 }
 
 .difficulty-easy {
-    background-color: rgb(126, 187, 154);
+    background-color: rgb(169, 209, 188);
 }
 
 .difficulty-normal {
-    background-color: wheat;
+    background-color: rgb(245, 229, 200);
 }
 
 .difficulty-hard {
-    background-color: rgb(238, 136, 136);
+    background-color: rgb(238, 160, 160);
 }
 
 .learn-guess-input {

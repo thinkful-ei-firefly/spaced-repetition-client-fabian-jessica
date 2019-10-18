@@ -55,6 +55,7 @@ class RegistrationForm extends Component {
             className="form-input"
             id='registration-name-input'
             name='name'
+            maxlength="20"
             required
           />
         </div>
@@ -66,6 +67,7 @@ class RegistrationForm extends Component {
             className="form-input"
             id='registration-username-input'
             name='username'
+            maxlength="20"
             required
           />
         </div>
@@ -78,6 +80,7 @@ class RegistrationForm extends Component {
             id='registration-password-input'
             name='password'
             type='password'
+            maxlength="20"
             required
           />
         </div>

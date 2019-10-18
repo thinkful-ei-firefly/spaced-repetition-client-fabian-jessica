@@ -20,7 +20,7 @@ class Dashboard extends Component {
       const data = await LanguageApiService.getLanguage()
       const language_name = data.language.name;
       const total_score = data.language.total_score;
-      const words = data.words;
+      const words = data.words.sort((wordA, wordB) => wordA.correct_count+1/wordA.incorrect_count+1 - wordB.correct_count+1/wordB.incorrect_count+1);
 
       this.setState({
         language_name,
