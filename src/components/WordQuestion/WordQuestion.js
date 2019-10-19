@@ -15,22 +15,28 @@ class WordQuestion extends React.Component {
     try{
       ev.preventDefault();
       const guess = ev.target['learn-guess-input']
-      const res = await LanguageApiService.setGuess(guess.value)
-      this.setState({
-        answered: true,
-        word: res,
-        feedback: {
-          ...res,
-          current_word: this.state.word.nextWord,
-          input_word: guess.value,
-        }
-      })
+      if (guess.value.trim().length > 0 ){
+        const res = await LanguageApiService.setGuess(guess.value.trim())
+        this.setState({
+          error: null,
+          answered: true,
+          word: res,
+          feedback: {
+            ...res,
+            current_word: this.state.word.nextWord,
+            input_word: guess.value,
+          }
+        })
+      }else{
+        this.setState({ error: 'You are sending a empty answer!!' })
+      }
     }catch(e){
       if (e.error && e.error==='Unauthorized request'){
         this.props.history.push(`/login`)
       }else if (e.error){
         this.setState({ error: e.error })
       }else{
+        console.log(e);
         this.setState({ error: 'You got error connection!' })
       }
     }
@@ -57,7 +63,8 @@ class WordQuestion extends React.Component {
 
   nextQuestion = () => {
       this.setState({
-        answered: false
+        answered: false,
+        error: null,
       })
   }
 
@@ -84,7 +91,7 @@ class WordQuestion extends React.Component {
             <span className="guess-word">{nextWord}</span>
             <form onSubmit={ev => this.handleFormSubmit(ev)}>
               <label htmlFor="learn-guess-input" className="guess-label">What's the translation for this word?</label>
-              <input type="text" id="learn-guess-input" className="guess" maxlength="20" required></input>
+              <input type="text" id="learn-guess-input" className="guess" minLength="1" maxLength="20" required></input>
               <button type="submit" className="guess-submit">Submit your answer</button>
             </form>
             <p className="DisplayScore">Your total score is: {totalScore}</p>
