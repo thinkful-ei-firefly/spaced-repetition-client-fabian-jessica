@@ -6,7 +6,6 @@ class WordFeedback extends React.Component {
   state = {}
 
   render () {
-    console.log(this.props.feedback);
     let feedbackHeader;
     let {wordCorrectCount, wordIncorrectCount}  = this.props.feedback.current_word
     if (this.props.feedback.isCorrect) {
