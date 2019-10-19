@@ -23,7 +23,7 @@ class WordQuestion extends React.Component {
           word: res,
           feedback: {
             ...res,
-            current_word: this.state.word.nextWord,
+            current_word: this.state.word,
             input_word: guess.value,
           }
         })

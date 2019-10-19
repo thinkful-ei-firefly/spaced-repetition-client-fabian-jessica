@@ -8,8 +8,15 @@ class WordFeedback extends React.Component {
   render () {
     console.log(this.props.feedback);
     let feedbackHeader;
-    if (this.props.feedback.isCorrect) feedbackHeader = 'You were correct! :D'
-    else feedbackHeader = 'Good try, but not quite right :('
+    let {wordCorrectCount, wordIncorrectCount}  = this.props.feedback.current_word
+    if (this.props.feedback.isCorrect) {
+      feedbackHeader = 'You were correct! :D'
+      wordCorrectCount++
+    }
+    else {
+      feedbackHeader = 'Good try, but not quite right :('
+      wordIncorrectCount++
+    }
 
     return (
       <div className="word-answer-screen">
@@ -19,11 +26,11 @@ class WordFeedback extends React.Component {
             <p >Your total score is: {this.props.feedback.totalScore}</p>
           </div>
           <div className="DisplayFeedback">
-            <p>The correct translation for {this.props.feedback.current_word} was {this.props.feedback.answer} and you chose {this.props.feedback.input_word}!</p>
+            <p>The correct translation for {this.props.feedback.current_word.nextWord} was {this.props.feedback.answer} and you chose {this.props.feedback.input_word}!</p>
           </div>
           <button type="button" className="next-word-button" onClick={this.props.nextQuestion}>Try another word!</button>
-          <p>You have answered this word correctly {this.props.feedback.wordCorrectCount} times.</p>
-          <p>You have answered this word incorrectly {this.props.feedback.wordIncorrectCount} times.</p>
+          <p>You have answered this word correctly {wordCorrectCount} times.</p>
+          <p>You have answered this word incorrectly {wordIncorrectCount} times.</p>
         </div>
       </div>
     );
